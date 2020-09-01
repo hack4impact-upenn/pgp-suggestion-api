@@ -94,8 +94,11 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    if flask.request.method == "POST":
+    print(flask.request.remote_addr)
+    if flask.request.method == "POST" and str(flask.request.remote_addr) == config.get("APP_HOST"): 
         id = flask.request.args.get('id', default="")
+    else:
+        return "Connection Refused"
     recs_results= []
     search = searcher.query_by_doc_text(id, k=50)
     recomendations = search.show(show_seed_docs=False)
