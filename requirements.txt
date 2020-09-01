@@ -1,0 +1,11 @@
+tqdm
+syntok
+BeautifulSoup4
+w3lib
+tensorflow==1.14.0
+tf_sentencepiece==0.1.83
+annoy
+tensorflow_hub
+pandas
+elasticsearch_dsl==6.0.0
+requests_aws4auth
